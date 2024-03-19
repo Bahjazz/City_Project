@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+    />
+    <title>Jönköping city</title>
+  </head>
+
+  <body class="is-logged-out">
+    <header class="title">
+      <h1><b>JÖNKÖPING CITY</b></h1>
+    </header>
+    <div class="columns col-gapless">
+      <div class="column col-3">
+        <nav id="menu">
+          <b>Menu</b>
+          <ul>
+            <li><a href="/about">Home</a></li>
+            <li>
+              <b><em>Store</em></b>
+              <ul>
+                <li class="if-is-logged-out">
+                  <a href="/stores">Store List</a>
+                </li>
+                <li class="if-is-logged-out">
+                  <a href="/create_store">Create Store</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="column col-9">
+        <main>
+          <div class="page" id="about-page">
+            <div class="centered-text">
+              <h2><b>WELCOME TO JÖNKÖPING CITY</b></h2>
+              <p>
+                Jkpg City is a big town with a small-town atmosphere. Shopping,
+                dining, and hotels share space with museums, theaters, and art
+                studios. All surrounded by green parks and blue lakes.
+              </p>
+            </div>
+            <div class="text-with-pics">
+              <div>
+                <img
+                  class="left-image"
+                  src="./images/asecs-b.jpeg"
+                  alt="Left Image"
+                />
+                <img src="./images/a6-2.jpg" alt="Right Image" />
+              </div>
+            </div>
+          </div>
+          <div class="page" id="stores-page">
+            <ul id="stores-list"></ul>
+          </div>
+          <div class="page" id="create-store-page">
+            <h1>Create a store:</h1>
+            <form action="" id="create-store-form">
+              <div>name: <input type="text" id="name" /></div>
+              <div>url: <input type="text" id="url" /></div>
+              <div>district: <input type="text" id="district" /></div>
+              <input type="submit" value="Create" />
+            </form>
+          </div>
+          <div class="page" id="not-found-page">
+            <h1>Page, Not Found!</h1>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer id="footer">©2024 Jönköping City. All rights reserved.</footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
