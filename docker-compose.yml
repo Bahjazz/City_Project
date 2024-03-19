@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: ./backend/Dockerfile
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - "80:80"  # Port 80 for nginx server serving frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
+
+  db:
+    image: mongo
+    environment:
+      - MONGO_URI=mongodb+srv://jkpgcity:HuS8rknxEQcXIPiD@cluster0.ahursib.mongodb.net/
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodb_data:
+    driver: local
